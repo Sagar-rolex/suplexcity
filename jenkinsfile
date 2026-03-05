@@ -1,1 +1,27 @@
+pipeline {
+    agent any
 
+    stages {
+        stage('Hello') {
+            steps {
+               git 'https://github.com/Sagar-rolex/suplexcity'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('build') {
+            steps {
+               bat 'javac hello'
+               bat 'hello.java'
+            }
+        }
+        stage('Result') {
+            steps {
+                echo 'displaying result'
+            }
+        }
+    }
+}
