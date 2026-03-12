@@ -1,26 +1,51 @@
 pipeline {
     agent any
-
     stages {
-        stage('Hello') {
+        stage('Checkout') {
             steps {
-               git 'https://github.com/Sagar-rolex/suplexcity'
+                // Use the 'git' step with a 'url' parameter
+                git url: 'pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                // Use the 'git' step with a 'url' parameter
+                git url: 'https://github.com/JebaKishore18/Practice-Devops.git' 
             }
         }
-        stage('Test') {
+        stage('Publish') {
             steps {
-                echo 'Testing'
+                // 'publishHTML' step takes a 'target' nested object
+                publishHTML([
+                    target: [
+                        allowMissing: true,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: false,
+                        reportDir: '.',
+                        reportFiles: 'new.html',
+                        reportName: 'My html report'
+                    ]
+                ])
             }
         }
-        stage('build') {
-            steps {
-               bat 'javac hello'
-               bat 'hello.java'
+    }
+}
+' 
             }
         }
-        stage('Result') {
+        stage('Publish') {
             steps {
-                echo 'displaying result'
+                // 'publishHTML' step takes a 'target' nested object
+                publishHTML([
+                    target: [
+                        allowMissing: true,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: false,
+                        reportDir: '.',
+                        reportFiles: 'love.html',
+                        reportName: 'My html report'
+                    ]
+                ])
             }
         }
     }
