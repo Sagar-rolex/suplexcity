@@ -13,7 +13,7 @@ stages{
           alwaysLinktoLastBuild:false,
           keepAll:false,
           reportDir:'.',
-          reportFiles:'love.html' ,
+          reportFiles:'new.html' ,
           reportName:'My html report' 
         ])
       }
