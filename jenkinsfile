@@ -4,13 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Use the 'git' step with a 'url' parameter
-                git url: 'pipeline {
-    agent any
-    stages {
-        stage('Checkout') {
-            steps {
-                // Use the 'git' step with a 'url' parameter
-                git url: 'https://github.com/JebaKishore18/Practice-Devops.git' 
+                git url: 'https://github.com/Sagar-rolex/suplexcity.git' 
             }
         }
         stage('Publish') {
@@ -23,26 +17,6 @@ pipeline {
                         keepAll: false,
                         reportDir: '.',
                         reportFiles: 'new.html',
-                        reportName: 'My html report'
-                    ]
-                ])
-            }
-        }
-    }
-}
-' 
-            }
-        }
-        stage('Publish') {
-            steps {
-                // 'publishHTML' step takes a 'target' nested object
-                publishHTML([
-                    target: [
-                        allowMissing: true,
-                        alwaysLinkToLastBuild: false,
-                        keepAll: false,
-                        reportDir: '.',
-                        reportFiles: 'love.html',
                         reportName: 'My html report'
                     ]
                 ])
